@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      OCR Screen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+    <ion-row>
+  
+        <ion-col width-40 style="text-align: center">
+  <button ion-button icon-start  (click)="presentActionSheet()" class="default-white-color" >
+  <div><ion-icon name="camera"></ion-icon><div><br>Take Picture Of</div><div> Insurance policy</div></div></button>
+  </ion-col>
+  </ion-row>
+  <div *ngIf="srcImage" class="image-wrapper">
+    <img id="image" [src]="srcImage" />
+    <button ion-button icon-left block (click)="analyze()" >
+      <ion-icon name="search"></ion-icon>
+      Submit
+    </button>
+    <button ion-button icon-left block (click)="restart()">
+      <ion-icon name="refresh"></ion-icon>
+      Reset
+    </button>
+  </div>
+
+  <br>
+  <ion-row>
+    <ion-col width-40 style="text-align: center">
+    <button ion-button icon-start  (click)="onPDFPage()" class="default-white-color" type="submit" ><div><ion-icon name="copy"></ion-icon> <div><br>Upload PDF Of </div><div>Insurance Poliicy</div></div></button>
+    </ion-col>
+  </ion-row>
+    
+
+  <ion-row>
+  <ion-col width-40 style="text-align: center">
+  <button ion-button icon-start  (click)="onOCRPage()" class="default-white-color" type="submit" ><div><ion-icon name="create"></ion-icon><br><br>Input <div> Insurance Policy</div> </div></button>
+  </ion-col>
+</ion-row>
+<div class ="title" align="center"><img src="assets/img/smartgenieland3.jpg" class="form-img3"/></div>
+  <ion-grid>
+    <ion-row>
+      	  
+	  <ion-col col-6 *ngFor="let photo of photos; let id = index">
+        <ion-card class="block">
+          <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+          <img [src]="photo" *ngIf="photo" />
+        </ion-card>
+      </ion-col>
+
+      <!-- Bindu -->
+      <div *ngIf="imgUrl != null">
+        <div  class="modal">
+          <img id="croppr"  [src]="imgUrl" #imageSrc>
+        </div>  
+      </div>
+      <ion-item *ngIf="imgCroppedUrl != null" >
+          <img   [src]="imgCroppedUrl" #imageSrc style="width:100%;height:auto;">
+      </ion-item>
+	  
+	 
+	  
+	    
+	  
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

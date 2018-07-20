@@ -1,0 +1,357 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar no-border-bottom>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+      <ion-title text-center>Insurance Portfolio</ion-title>
+  
+      <ion-buttons right>
+        <button ion-button  (click)="logout()"> <ion-icon  name="log-out"></ion-icon>  </button>
+      </ion-buttons>
+      <!-- <ion-icon menuToggle name="log-out"></ion-icon>-->
+    </ion-navbar>
+  
+  </ion-header>
+
+  
+  
+  <ion-content>
+  
+  <!-- <div class="title" align="center"><img src="assets/img/logo.jpg" class="form-img" /></div> -->
+  <ion-card>
+  <ion-slides pager>
+      <ion-slide>
+        <p>Sum Assured</p>
+          <div padding><canvas #doughnutCanvas></canvas></div>
+          <div padding></div>
+      </ion-slide>
+      <ion-slide>
+          <p>Premium</p>
+          <div padding><canvas #doughnutCanvasTwo></canvas></div>
+          <div padding></div>
+      </ion-slide>
+    </ion-slides>
+</ion-card>
+
+    <ion-list padding>
+      <!-- First Level -->
+      <ion-list-header>
+          <div class="or-label">
+              Coverage Statisstics
+             </div>
+          
+        </ion-list-header>
+     
+      <ion-item *ngFor="let item of listOfInsurances; let i = index" no-lines  [ngStyle]="{'background-color': item.bgColor}">
+        <!-- Toggle Button -->
+        <div (click)="toggleSection(i)"  
+        style="color: whitesmoke;
+        font-size: 12px;text-align: center">
+          <img [src]="item.img" style="width:18px;float: left;
+          margin: 0px;" item-start>
+          <span item-start style="margin-left: 10px !important;margin: 0px;float:left">
+            {{ item.name }} ({{ item.itemsCount }})</span>
+          <span style="text-align: center">{{item.value}}</span>
+          <span item-end style="float: right;
+          margin:0px;">{{item.days}}</span>
+          <!-- <span><ion-icon style="float:right" name="add" *ngIf="!item.open"></ion-icon></span>
+          <span><ion-icon style="float:right" name="remove" *ngIf="item.open"></ion-icon></span> -->
+        </div>
+  
+        <div *ngIf="item.children && item.open" style="margin-top:15px;">
+          <ion-list>
+            <!-- Third Level -->
+            <ion-item *ngFor="let child of item.children; let k = index" class="child-item" style="border: 1px solid lightgray" text-wrap>
+              <p>{{ child }}</p>
+              <!-- <p text-lowercase>{{ item.information }}</p>
+              <button ion-button outline item-end (click)="buyItem(item)">{{ item.price }}</button> -->
+            </ion-item>
+          </ion-list>
+        </div>
+  
+      </ion-item>
+    </ion-list>
+ 
+     <ion-grid>
+      <ion-row>
+        <ion-col col-4 style="   width:30%;">
+        <div style="border-radius: 10px;
+        font-size: 12px;
+        padding: 4px;
+        border: 2px dashed gray;">
+            <img src="assets/img/car.png" style="width:35px;"> <span style="position:absolute">Vehicle</span>
+            <ion-row style="text-align: center">
+              <ion-col col-6 style="left:-8px">
+                  <button ion-button small>Add</button>
+              </ion-col>
+              <ion-col col-6 style="right:6px">
+                <button ion-button small>Buy</button>
+              </ion-col>
+            </ion-row>
+            </div>
+        </ion-col>
+        <ion-col col-4 style="width:30%">
+        <div style="border-radius: 10px;
+        font-size: 12px;
+        padding: 4px;
+        border: 2px dashed gray;">
+            <img src="assets/img/home.png" style="width:35px;"> <span style="position:absolute">Home</span>
+            <ion-row style="text-align: center">
+                <ion-col col-6 style="left:-8px">
+                    <button ion-button small>Add</button>
+                </ion-col>
+                <ion-col col-6 style="right:6px">
+                  <button ion-button small>Buy</button>
+                </ion-col>
+              </ion-row>
+              </div>
+            
+        </ion-col>
+        <ion-col col-4 style="width:30%">
+        <div style="border-radius: 10px;
+        font-size: 12px;
+        padding: 4px;
+        border: 2px dashed gray;">
+            <img src="assets/img/hospital.png" style="width:35px;"> <span style="position:absolute">Critical Illness</span>
+            <ion-row style="text-align: center">
+                <ion-col col-6 style="left:-8px">
+                    <button ion-button small>Add</button>
+                </ion-col>
+                <ion-col col-6 style="right: 6px">
+                  <button ion-button small>Buy</button>
+                </ion-col>
+              </ion-row>
+              </div>
+        </ion-col>
+      </ion-row>
+          
+    </ion-grid> 
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-4 style="   width:30%;">
+          <div style="border-radius: 10px;
+          font-size: 12px;
+          padding: 4px;
+          border: 2px dashed gray;">
+              <img src="assets/img/plus.png" style="width:25px;"> <span style="position:absolute">Health</span>
+              <ion-row style="text-align: center">
+                <ion-col col-6 style="left:-8px">
+                    <button ion-button small>Add</button>
+                </ion-col>
+                <ion-col col-6 style="right:6px">
+                  <button ion-button small>Buy</button>
+                </ion-col>
+              </ion-row>
+              </div>
+          </ion-col>
+          <ion-col col-4 style="width:30%">
+          <div style="border-radius: 10px;
+          font-size: 12px;
+          padding: 4px;
+          border: 2px dashed gray;">
+              <img src="assets/img/flower.png" style="width:25px;"> <span style="position:absolute">Life</span>
+              <ion-row style="text-align: center">
+                  <ion-col col-6 style="left:-8px">
+                      <button ion-button small>Add</button>
+                  </ion-col>
+                  <ion-col col-6 style="right:6px">
+                    <button ion-button small>Buy</button>
+                  </ion-col>
+                </ion-row>
+                </div>
+              
+          </ion-col>
+          <ion-col col-4 style="width:30%">
+          <div style="border-radius: 10px;
+          font-size: 12px;
+          padding: 4px;
+          border: 2px dashed gray;" text-center>
+            <ion-row text-center>
+              <ion-col>
+                <img src="assets/img/airp.png" style="width:20px;" float-left> 
+                <span>Travel</span>
+              </ion-col>
+            </ion-row>
+            <ion-row text-center>
+                <ion-col col-6 style="left:-8px">
+                    <button ion-button small>Add</button>
+                </ion-col>
+                <ion-col col-6 style="right: 6px">
+                  <button ion-button small>Buy</button>
+                </ion-col>
+              </ion-row>
+          </div>
+          </ion-col>
+        </ion-row>
+            
+      </ion-grid> 
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button full block type="policyRenewal">Policy Renewal</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button full ion-button block type="needGapAnalysis">Need Gap Analysis</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+    <div style="margin-top: 0px;"></div>
+    <div padding>
+      <div style="text-align: center" (click)="showHideOptions();">
+          <ion-icon name="arrow-down" *ngIf="!isOptionsOpened"></ion-icon>   
+          <ion-icon name="arrow-up" *ngIf="isOptionsOpened"></ion-icon> 
+          <div>More Options  </div>    
+      </div>
+    <ion-grid *ngIf="isOptionsOpened">
+      <ion-row>
+  
+          <ion-col text-center>
+              <button ion-button outline  align-self-end ion-button (click)="contactofsomeonetrusted()" class="btn default-white-color" text-center text-wrap
+          text-justify>
+          <ion-grid>
+              <ion-row>
+                <ion-col text-center>
+                    <i class="fas fa-database primary" ></i>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col text-center>
+                 Contact Of Someone Trusted
+                </ion-col>
+              </ion-row>
+              
+            </ion-grid>
+          </button>
+        </ion-col>
+  
+        <ion-col text-center>
+            <button ion-button outline (click)="addPolices()" class="btn default-white-color" text-center text-wrap
+          text-justify>
+          <ion-grid>
+              <ion-row>
+                <ion-col text-center>
+                    <i class="fas fa-file-signature primary"></i>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col text-center>
+                Add & Store more policies
+                </ion-col>
+              </ion-row>
+  
+            </ion-grid>
+          </button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+  
+          <ion-col text-center>
+              <button ion-button outline  (click)="addfamily()" class="btn default-white-color" text-center text-wrap
+          text-justify>
+          <ion-grid>
+              <ion-row>
+                <ion-col text-center>
+                    <i class="fas fa-user-plus primary"></i>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col text-center>
+                Add policies for your family members
+                </ion-col>
+              </ion-row>
+  
+            </ion-grid>
+          </button>
+        </ion-col>
+  
+        <ion-col text-center>
+            <button ion-button outline (click)="claims()" class="btn default-white-color" text-center text-wrap
+          text-justify>
+          <ion-grid>
+              <ion-row>
+                <ion-col text-center>
+                    <i class="far fa-edit primary"></i>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col text-center>
+                   Manage Claims
+                </ion-col>
+              </ion-row>
+  
+            </ion-grid>
+          </button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+  
+          <ion-col text-center>
+              <button ion-button outline
+              class="btn default-white-color" text-center text-wrap
+              text-justify>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col text-center>
+              <i class="far fa-file-alt primary"></i>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              Compare Quotes
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              (coming soon)
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+          </button>
+        </ion-col>
+  
+        <ion-col text-center>
+            <button ion-button outline 
+              class="btn default-white-color" text-center text-wrap
+              text-justify>
+        <ion-grid>
+          <ion-row>
+            <ion-col text-center>
+              <i class="fa fa-shopping-cart primary" aria-hidden="true"></i>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              Special Promotions
+            </ion-col>
+          </ion-row> 
+          <ion-row>
+            <ion-col text-center>
+              (coming soon)
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+          </button>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+    </div>
+  </ion-content>

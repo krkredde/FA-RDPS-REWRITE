@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+ 
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<p></p>
+ 
+
+<div class="title" align="center"><img src="assets/img/logo.jpg" class="form-img" /></div>
+
+    <div class="title" align="center"><img src="assets/img/smartgenieland2.jpg" class="form-img2"/></div>
+  
+<ion-row>
+    
+      <ion-col width-40 style="text-align: right"><button ion-button outline (click)="typeOfInsurance()" class="default-white-color" >
+        <div><ion-col text-center>
+          <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        </ion-col>
+    <div>Create Insurance <br><br> Valet</div>
+    </div>
+  </button>
+</ion-col>
+<ion-col width-80 style="text-align: left"><button ion-button outline  (click)="oncomparePage()"  class="default-white-color" >
+    <div><ion-col text-center>
+        <ion-icon ios="ios-list-box" md="md-list-box" ></ion-icon>
+      </ion-col>
+    <br>
+     <div>Compare Quotes
+  <br>
+  <br>
+  (Coming soon)</div>
+</div>
+  </button>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col width-40 style="text-align: right"><button ion-button outline (click)="onclaimsPage()" class="default-white-color">
+          <div> <ion-col text-center>
+              <ion-icon ios="ios-document" md="md-document" ></ion-icon>
+            </ion-col>
+           
+            <br>
+            <div><div>Claims
+         <br>
+         <br>
+         </div>
+        </div>
+    </div>
+  </button>
+  </ion-col>
+
+  <ion-col width-80 style="text-align: left"><button ion-button outline (click)="ondirectPage()" class="default-white-color">
+      <div><ion-col text-center>
+          <ion-icon  ios="ios-basket" md="md-basket" ></ion-icon>
+        </ion-col>
+      <br>
+    <div>
+      Direct Buy
+    <br>
+  <br>
+  (Coming soon)</div>
+    </div>
+  </button>
+  </ion-col>
+</ion-row>
+<div class ="title" align="center"><img src="assets/img/smartgenieland3.jpg" class="form-img3"/></div>
+ 
+
+
+</ion-content>

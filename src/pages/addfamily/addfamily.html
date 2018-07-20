@@ -1,0 +1,99 @@
+<!--
+Generated template for the AddfamilyPage page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <ion-title>Add Family</ion-title>
+  </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  <!-- <div padding>Husband Name/Spouse Name</div>
+  <ion-item>
+  <ion-input placeholder="Husband Name/Spouse Name" [(ngModel)]="husbandName/spouseName" name="Husband name/Spouse Name">
+  </ion-input>
+  </ion-item>-->
+  
+  
+  
+  <!-- <div padding>Husband Name</div>
+  <ion-item>
+  <ion-input placeholder="Husband Name" [(ngModel)]="husbandName" name="Husband Name">
+  </ion-input>
+  </ion-item> -->
+  
+  
+  <div padding>Spouse Name</div>
+  <ion-item>
+  <ion-input placeholder="Spouse Name" [(ngModel)]="spouseName" name="Spouse Name">
+  </ion-input>
+  </ion-item>
+  
+  
+  <div padding>Father Name</div>
+  <ion-item>
+  <ion-input placeholder="Father Name" [(ngModel)]="fatherName" name="Father name">
+  </ion-input>
+  </ion-item>
+  
+  <div padding>Mother Name</div>
+  <ion-item>
+  <ion-input placeholder="Mother Name" [(ngModel)]="motherName" name="Mother name">
+  </ion-input>
+  </ion-item>
+  
+  <div padding>Number Of Children</div>
+  <ion-item>
+  <ion-input placeholder="Number Of Children" min='0' [(ngModel)]="numberOfChildren" (change)="generateFields();" type="number" name="Number Of Children">
+  </ion-input>
+  </ion-item>
+  
+  <ion-list *ngFor="let count of numOfChildrenArray">
+  
+  <ion-grid>
+  <ion-row>
+  <ion-col col-6>
+  <div padding>Name</div>
+  <ion-item>
+  <ion-input placeholder="Name" type="text" [(ngModel)]="username" name="name">
+  </ion-input>
+  </ion-item>
+  </ion-col>
+  <ion-col col-6>
+  <div padding>Gender</div>
+  <ion-item>
+  <ion-select [(ngModel)]="gender">
+  <ion-option value="male">Male</ion-option>
+  <ion-option value="female">Femmale</ion-option>
+  </ion-select>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col col-6>
+  <div padding>DOB</div>
+  <ion-item>
+  <ion-input placeholder="dob" type="date" [(ngModel)]="dob" name="dob">
+  </ion-input>
+  </ion-item>
+  </ion-col>
+  <ion-col col-6>
+ <!-- <div padding>Disability</div>
+   <ion-item>
+  <ion-label>Disability</ion-label>
+  <ion-checkbox [(ngModel)]= "disability" checked="true" item-end>
+  </ion-checkbox>
+  </ion-item> -->
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  
+  </ion-list>
+  
+  </ion-content>
+  

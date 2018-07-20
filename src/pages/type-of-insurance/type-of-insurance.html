@@ -1,0 +1,70 @@
+<!--
+  Generated template for the TypeOfInsurancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Type Of Insurance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form #insuranceForm="ngForm" (ngSubmit)="onSubmit(insuranceForm)">
+  <ion-list radio-group [(ngModel)]="insurance" name="insuranceType" required #insuranceType="ngModel">
+    <ion-item no-lines>
+      <ion-label>Life</ion-label>
+      <ion-radio item-left value="life" checked></ion-radio>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Car</ion-label>
+      <ion-radio item-left value="car"></ion-radio>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Health</ion-label>
+      <ion-radio item-left value="health"></ion-radio>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Travel</ion-label>
+      <ion-radio item-left value="travel"></ion-radio>
+    </ion-item>
+    <div *ngIf="insuranceType.invalid && insuranceForm.submitted" class="error"> 
+        Insurance is required. 
+    </div>
+    <!-- <ion-col col-12>
+        <p ion-text [hidden]="insurance.valid || submitted == false" class="validation-label" >
+            insurance is required
+        </p>
+      </ion-col> -->
+
+    <ion-item style="border:1px solid lightgray;margin-top:6px;">
+      <ion-label *ngIf="isSelected==''">Select</ion-label>
+      <ion-label *ngIf="isSelected"><span style="font-size:14px !important;color:#333 !important;">{{isSelected}}</span></ion-label>
+      <ion-select interface="popover" name="typeOfInsuranceCompany" [(ngModel)]="isSelected" required #typeOfInsuranceCompany="ngModel">
+        <ion-option value="alex">Alex</ion-option>
+        <ion-option value="alianz">Alianz</ion-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="typeOfInsuranceCompany.invalid && insuranceForm.submitted" [ngClass] = "'error'"> 
+        Insurance Type is required. please select. 
+    </div>
+  </ion-list>
+
+  
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-8>
+        <button ion-button block type="submit">Submit</button>
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>

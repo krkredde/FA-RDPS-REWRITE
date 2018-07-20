@@ -1,0 +1,38 @@
+{
+    "questions": [
+ 
+        {
+            "flashCardFront": "<img src='assets/images/helicopter.png' />",
+            
+            "questionText": "Do you Have Any Existing Policy?",
+            "answers": [
+                {"answer": "Yes I Have Policy", "correct": true, "selected": false},
+                {"answer": "No I have Coverage", "correct": false, "selected": false}
+                
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/images/plane.png' />",
+            
+            "questionText": "Are You Malaysian?",
+            "answers": [
+                {"answer": "No", "correct": true, "selected": false},
+                {"answer": "Yes", "correct": true, "selected": false}
+                
+            ]
+            
+        },
+        {
+            "flashCardFront": "<img src='assets/images/plane.png' />",
+            
+            "questionText": "what's your gender?",
+            "answers": [
+                {"answer": "male", "correct": true, "selected": false},
+                {"answer": "female", "correct": true, "selected": false}
+                
+            ]
+        }
+
+       
+    ]
+}

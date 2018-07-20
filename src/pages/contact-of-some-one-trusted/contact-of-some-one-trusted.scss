@@ -1,0 +1,28 @@
+page-contact-of-some-one-trusted {
+
+    ion-item{
+        border-bottom: none !important;
+        .item-inner{
+        /* border: none !important; */
+        border: 1px !important;
+        /* margin: 10px; */
+        border-color: grey !important;
+        border-style: solid !important;
+        border-radius: 4px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        }
+        .select-text{
+        left:30px;
+        }
+        
+        .select-icon{
+        top: 50%;
+        right: 14px;
+        height:0px !important;
+        position: absolute !important;
+        }
+        }
+        }
+
+

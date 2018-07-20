@@ -1,0 +1,198 @@
+<!--
+Generated template for the OcrInputPage page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+    <ion-title>OCR Input Page</ion-title>
+    </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+    
+    <div padding>Policy Type</div>
+    <ion-item>
+    <!--<ion-label style="left:5px; color: #888;">{{selectedLiabilityInsurance}}</ion-label>-->
+    <ion-select [(ngModel)]="selectedPolicyType">
+    <ion-option value="Health">Health</ion-option>
+    <ion-option value="Life">Life</ion-option>
+    <ion-option value="Car">Car</ion-option>
+    <ion-option value="Travel">Travel</ion-option>
+    </ion-select>
+    </ion-item>
+    
+    <div padding>Policy Number</div>
+    <ion-item>
+    <ion-input placeholder="Policy Number" [(ngModel)]="policyNumber" name="policy number">
+    </ion-input>
+    </ion-item>
+    
+    <div padding>Insurance Company</div>
+    <ion-item>
+    <ion-select [(ngModel)]="selectedLiabilityInsurance">
+    <ion-option value="axaMalaysia">AXA Malaysia></ion-option>
+    <ion-option value="aia">AIA</ion-option>
+    <ion-option value="alianz">Alianz</ion-option>
+    </ion-select>
+    </ion-item>
+    
+    <div padding>Insurance Coverage</div>
+    <ion-item>
+    <span padding>General</span> <span item-end>Rm4200</span>
+    <!--<ion-input placeholder="Insurance Coverage" name="insurance coverage" id="textField">-->
+    <!--</ion-input>-->
+    </ion-item>
+    
+    <div padding>Coverage Timeline</div>
+    <ion-item>
+    <span padding>General</span> <span item-end>6 months 6 days</span>
+    </ion-item>
+
+    <div padding>Beneficiary</div>
+    <ion-item>
+    <ion-input placeholder="Beneficiary" [(ngModel)]="beneficiary" name="beneficiary">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Coverage Amount</div>
+    <ion-item>
+    <ion-input placeholder="Coverage Amount" [(ngModel)]="coverageAmount" name="coverageAmount">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Expiry Date</div>
+    <ion-item>
+    <ion-input placeholder="Expiry Date" [(ngModel)]="expiryDate" name="expiryDate">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Insured Name</div>
+    <ion-item>
+    <ion-input placeholder="Insured Name" [(ngModel)]="insuredName" name="insuredName">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Premium</div>
+    <ion-item>
+    <ion-input placeholder="Premium" [(ngModel)]="premium" name="premium">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Riders</div>
+    <ion-item>
+    <ion-input placeholder="Riders" [(ngModel)]="riders" name="riders">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Type Of Insurance</div>
+    <ion-item>
+    <ion-input placeholder="Type Of Insurance" [(ngModel)]="typeOfInsurance" name="typeOfInsurance">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Company Name</div>
+    <ion-item>
+    <ion-input placeholder="Company Name" [(ngModel)]="companyName" name="companyName">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Name</div>
+    <ion-item>
+    <ion-input placeholder="Name" [(ngModel)]="name" name="name">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Prefered Name</div>
+    <ion-item>
+    <ion-input placeholder="Prefered Name" [(ngModel)]="preferedname" name="preferedname">
+    </ion-input>
+    </ion-item>
+
+
+    <div padding>Email</div>
+    <ion-item>
+    <ion-input placeholder="Email" [(ngModel)]="email" name="email">
+    </ion-input>
+    </ion-item>
+
+
+    <div padding>Gender</div>
+    <ion-item>
+    <ion-select [(ngModel)]="gender">
+    <ion-option value="male">Male</ion-option>
+    <ion-option value="female">Female</ion-option>
+    </ion-select>
+    </ion-item>
+    
+
+
+    <div padding>Ic/Passport</div>
+    <ion-item>
+    <ion-input placeholder="Ic/Passport" [(ngModel)]="icPassport" name="Ic/Passport">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Martial Status</div>
+    <ion-item>
+    <ion-select [(ngModel)]="martialstatus">
+    <ion-option value="single">Single</ion-option>
+    <ion-option value="married">Married</ion-option>
+    </ion-select>
+    </ion-item>
+
+    <div padding>Mobile no</div>
+    <ion-item>
+    <ion-input placeholder="Mobile no" [(ngModel)]="mobileno" name="mobileno">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Nationality</div>
+    <ion-item>
+    <ion-input placeholder="Nationality" [(ngModel)]="nationality" name="nationality">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Occupation</div>
+    <ion-item>
+    <ion-input placeholder="Occupation" [(ngModel)]="occupation" name="occupation">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Race</div>
+    <ion-item>
+    <ion-input placeholder="Race" [(ngModel)]="race" name="race">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Relation</div>
+    <ion-item>
+    <ion-input placeholder="Relation" [(ngModel)]="relation" name="relation">
+    </ion-input>
+    </ion-item>
+
+    <div padding>Religion Name</div>
+    <ion-item>
+    <ion-input placeholder="Religion Name" [(ngModel)]="religionName" name="religionName">
+    </ion-input>
+    </ion-item>
+
+
+    <ion-grid>
+            <ion-row>
+              <ion-col col-2></ion-col>
+              <ion-col col-8>
+                <button ion-button block type="submit">Submit</button>
+              </ion-col>
+              <ion-col col-2></ion-col>
+            </ion-row>
+          </ion-grid>
+
+    
+    
+    </ion-content>
+    
